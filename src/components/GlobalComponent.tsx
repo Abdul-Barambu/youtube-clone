@@ -19,8 +19,16 @@ const GlobalComponent = () => {
     navigation.navigate("Network")
   }
 
+  const handleNotificationScreen = () => {
+    navigation.navigate("Notification")
+  }
+
+  const handleSearchScreen = () => {
+    navigation.navigate("Search")
+  }
+
   return (
-    <SafeAreaView style={{ marginTop: Platform.OS === 'ios' ? 40 : 0, backgroundColor: 'white' }}>
+    <SafeAreaView style={{ backgroundColor: 'white' }}>
       <View className='mt-3 mx-5 flex-row justify-between items-center'>
         {/* logo */}
         <View className='flex-row items-center gap-1'>
@@ -30,8 +38,8 @@ const GlobalComponent = () => {
         {/* icons */}
         <View className='flex-row gap-4'>
           <MaterialCommunityIcons onPress={handleNetworkScreen} name="access-point-network" size={27} color="black" />
-          <Ionicons name="notifications-outline" size={27} color="black" />
-          <EvilIcons name="search" size={27} color="black" />
+          <Ionicons onPress={handleNotificationScreen} name="notifications-outline" size={27} color="black" />
+          <EvilIcons onPress={handleSearchScreen} name="search" size={27} color="black" />
         </View>
       </View>
     </SafeAreaView>

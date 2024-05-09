@@ -1,12 +1,17 @@
-import { View, Text } from 'react-native'
+import { View, Text, Platform } from 'react-native'
 import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import GlobalComponent from '../components/GlobalComponent'
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView className='flex-1 bg-white'>
+    <View className='flex-1 bg-white'>
+
+      <GlobalComponent />
+
+      <View style={{ paddingTop: Platform.OS === 'android' ? 20 : 0 }}>
         <Text>HomeScreen</Text>
-    </SafeAreaView>
+      </View>
+    </View>
   )
 }
 
