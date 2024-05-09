@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Navigation from './src/navigation/Navigation';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import GlobalComponent from './src/components/GlobalComponent';
+// import Navigation from './src/navigation/Navigation';
 import { useFonts } from 'expo-font';
+import { NavigationContainer } from '@react-navigation/native';
+import { StackNavigation } from './src/navigation/Navigation';
 
 export default function App() {
 
@@ -11,15 +11,15 @@ export default function App() {
     FreemanRegular: require("./assets/fonts/Freeman-Regular.ttf")
   })
 
-  if(!loaded){
+  if (!loaded) {
     return null;
   }
 
   return (
-    <View className='flex-1'>
-        <GlobalComponent />
-        <Navigation />
+
+      <NavigationContainer>
+        <StackNavigation />
         <StatusBar style='auto' />
-    </View>
+      </NavigationContainer>
   );
 }

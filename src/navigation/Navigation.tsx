@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import WelcomeScreen from '../screens/WelcomeScreen';
 import HomeScreen from '../screens/HomeScreen';
@@ -11,12 +11,27 @@ import { MaterialIcons } from '@expo/vector-icons';
 import AddPost from '../screens/AddPost';
 import Subscription from '../screens/Subscription';
 import You from '../screens/You';
+import Network from '../screens/Network';
+import GlobalComponent from '../components/GlobalComponent';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+export type RootStackParamList = {
+  BottomNavigation: undefined;
+  Network: undefined;
+};
 
 const Tab = createBottomTabNavigator();
 
-const Navigation = () => {
+export const BottomNavigation = () => {
+
+
   return (
-    <NavigationContainer>
+    <View className='flex-1'>
+
+      <GlobalComponent />
+
+      {/* Tab Navs */}
       <Tab.Navigator initialRouteName='Welcome' screenOptions={{
         tabBarActiveTintColor: 'black',
         tabBarInactiveTintColor: 'black',
@@ -83,8 +98,18 @@ const Navigation = () => {
           }}
         />
       </Tab.Navigator>
-    </NavigationContainer>
+    </View>
   )
 }
 
-export default Navigation
+
+const Stack = createNativeStackNavigator()
+
+export const StackNavigation = () => {
+  return (
+      <Stack.Navigator>
+        <Stack.Screen name="BottomNavigation" component={BottomNavigation} options={{ headerShown: false }} />
+        <Stack.Screen name="Network" component={Network} />
+      </Stack.Navigator>
+  )
+}
