@@ -1,6 +1,5 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import WelcomeScreen from '../screens/WelcomeScreen';
 import HomeScreen from '../screens/HomeScreen';
@@ -11,7 +10,6 @@ import { MaterialIcons } from '@expo/vector-icons';
 import AddPost from '../screens/AddPost';
 import Subscription from '../screens/Subscription';
 import You from '../screens/You';
-import Network from '../screens/Network';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Notification from '../screens/Notification';
 import Search from '../screens/Search';
@@ -20,7 +18,6 @@ import Setting from '../screens/Setting';
 
 export type RootStackParamList = {
   BottomNavigation: undefined;
-  Network: undefined;
   Notification: undefined;
   Search: undefined;
   Setting: undefined;
@@ -109,12 +106,11 @@ const Stack = createNativeStackNavigator()
 
 export const StackNavigation = () => {
   return (
-      <Stack.Navigator>
-        <Stack.Screen name="BottomNavigation" component={BottomNavigation} options={{ headerShown: false }} />
-        <Stack.Screen name="Network" component={Network} options={{headerShown: false}}  />
-        <Stack.Screen name="Notification" component={Notification} options={{headerShown: false}}  />
-        <Stack.Screen name="Search" component={Search} options={{headerShown: false}} />
-        <Stack.Screen name="Setting" component={Setting} options={{headerShown: false}} />
-      </Stack.Navigator>
+    <Stack.Navigator>
+      <Stack.Screen name="BottomNavigation" component={BottomNavigation} options={{ headerShown: false }} />
+      <Stack.Screen name="Notification" component={Notification} options={{ headerShown: false }} />
+      <Stack.Screen name="Search" component={Search} options={{ headerShown: false }} />
+      <Stack.Screen name="Setting" component={Setting} options={{ headerShown: false }} />
+    </Stack.Navigator>
   )
 }
