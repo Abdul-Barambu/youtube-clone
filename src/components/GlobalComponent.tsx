@@ -41,7 +41,12 @@ const GlobalComponent = () => {
         {/* icons */}
         <View className='flex-row gap-4'>
           <MaterialCommunityIcons onPress={handleNetworModal} name="access-point-network" size={27} color="black" />
-          <Ionicons onPress={handleNotificationScreen} name="notifications-outline" size={27} color="black" />
+          <View className='flex-row'>
+            <Ionicons onPress={handleNotificationScreen} name="notifications-outline" size={27} color="black" />
+            <View className='bg-red-600 rounded-full w-4 h-4 text-center absolute right-0'>
+              <Text className='text-white font-black text-center text-xs'>2</Text>
+            </View>
+          </View>
           <EvilIcons onPress={handleSearchScreen} name="search" size={27} color="black" />
         </View>
       </View>
