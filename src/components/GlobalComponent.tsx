@@ -1,4 +1,4 @@
-import { View, Text, Platform, StyleSheet, Modal, TouchableWithoutFeedback } from 'react-native'
+import { View, Text, Platform, StyleSheet, Modal, TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { AntDesign } from '@expo/vector-icons';
@@ -32,7 +32,7 @@ const GlobalComponent = () => {
 
   return (
     <SafeAreaView style={{ backgroundColor: 'white' }}>
-      <View className='mt-3 mx-5 flex-row justify-between items-center'>
+      <View className='mt-3 ml-2 mr-4 flex-row justify-between items-center'>
         {/* logo */}
         <View className='flex-row items-center gap-1'>
           <AntDesign name="youtube" size={40} color="red" />
@@ -42,10 +42,12 @@ const GlobalComponent = () => {
         <View className='flex-row gap-4'>
           <MaterialCommunityIcons onPress={handleNetworModal} name="access-point-network" size={27} color="black" />
           <View className='flex-row'>
-            <Ionicons onPress={handleNotificationScreen} name="notifications-outline" size={27} color="black" />
-            <View className='bg-red-600 rounded-full w-4 h-4 text-center absolute right-0'>
-              <Text className='text-white font-black text-center text-xs'>2</Text>
-            </View>
+            <TouchableOpacity onPress={handleNotificationScreen}>
+              <Ionicons name="notifications-outline" size={27} color="black" />
+              <View className='bg-red-600 rounded-full w-4 h-4 text-center absolute right-0'>
+                <Text className='text-white font-black text-center text-xs'>2</Text>
+              </View>
+            </TouchableOpacity>
           </View>
           <EvilIcons onPress={handleSearchScreen} name="search" size={27} color="black" />
         </View>
