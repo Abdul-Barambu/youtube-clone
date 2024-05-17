@@ -131,55 +131,57 @@ const Drawer = createDrawerNavigator();
 
 const CustomDrawerContent = (props: any) => {
   return (
-    <DrawerContentScrollView {...props}>
-      <View style={{ padding: 10 }} className='flex-row items-center gap-1 mb-2'>
-        <AntDesign name="youtube" size={30} color="red" />
-        <Text style={styles.youtubeText} className='tracking-tighter'>YouTube</Text>
-      </View>
-      <DrawerItemList {...props} />
-
-      {/* additional drawser screens */}
-      <View style={styles.separator}></View>
-      <DrawerItem
-        label="YouTube Premium"
-        onPress={() => props.navigation.navigate('Youtubes')}
-        icon={({ color, size }) => (
+    <View className='flex-1 ml-2'>
+      <DrawerContentScrollView {...props}>
+        <View style={{ padding: 10 }} className='flex-row items-center gap-1 mb-2'>
           <AntDesign name="youtube" size={30} color="red" />
-        )}
-        labelStyle={{ color: 'black', fontSize: 16, fontWeight: 'normal', letterSpacing: 0.2 }}
-      />
-      <DrawerItem
-        label="YouTube Studio"
-        onPress={() => props.navigation.navigate('Youtubes')}
-        icon={({ color, size }) => (
-          <MaterialCommunityIcons name="motion-play" size={24} color="red" />
-        )}
-        labelStyle={{ color: 'black', fontSize: 16, fontWeight: 'normal', letterSpacing: 0.2 }}
-      />
-      <DrawerItem
-        label="YouTube Music"
-        onPress={() => props.navigation.navigate('Youtubes')}
-        icon={({ color, size }) => (
-          <MaterialCommunityIcons name="motion-play-outline" size={24} color="red" />
-        )}
-        labelStyle={{ color: 'black', fontSize: 16, fontWeight: 'normal', letterSpacing: 0.2 }}
-      />
-      <DrawerItem
-        label="YouTube Kids"
-        onPress={() => props.navigation.navigate('Youtubes')}
-        icon={({ color, size }) => (
-          <AntDesign name="youtube" size={28} color="#D0312D" />
-        )}
-        labelStyle={{ color: 'black', fontSize: 16, fontWeight: 'normal', letterSpacing: 0.2 }}
-      />
-    </DrawerContentScrollView>
+          <Text style={styles.youtubeText} className='tracking-tighter'>YouTube</Text>
+        </View>
+        <DrawerItemList {...props} />
+
+        {/* additional drawser screens */}
+        <View style={styles.separator}></View>
+        <DrawerItem
+          label="YouTube Premium"
+          onPress={() => props.navigation.navigate('Youtubes')}
+          icon={({ color, size }) => (
+            <AntDesign name="youtube" size={30} color="red" />
+          )}
+          labelStyle={{ color: 'black', fontSize: 16, fontWeight: 'normal', letterSpacing: 0.2 }}
+        />
+        <DrawerItem
+          label="YouTube Studio"
+          onPress={() => props.navigation.navigate('Youtubes')}
+          icon={({ color, size }) => (
+            <MaterialCommunityIcons name="motion-play" size={24} color="red" />
+          )}
+          labelStyle={{ color: 'black', fontSize: 16, fontWeight: 'normal', letterSpacing: 0.2 }}
+        />
+        <DrawerItem
+          label="YouTube Music"
+          onPress={() => props.navigation.navigate('Youtubes')}
+          icon={({ color, size }) => (
+            <MaterialCommunityIcons name="motion-play-outline" size={24} color="red" />
+          )}
+          labelStyle={{ color: 'black', fontSize: 16, fontWeight: 'normal', letterSpacing: 0.2 }}
+        />
+        <DrawerItem
+          label="YouTube Kids"
+          onPress={() => props.navigation.navigate('Youtubes')}
+          icon={({ color, size }) => (
+            <AntDesign name="youtube" size={28} color="#D0312D" />
+          )}
+          labelStyle={{ color: 'black', fontSize: 16, fontWeight: 'normal', letterSpacing: 0.2 }}
+        />
+      </DrawerContentScrollView>
+    </View>
   );
 }
 
 
 export const DrawerNavigation = () => {
   return (
-    <View className='flex-1 ml-2'>
+    <View className='flex-1'>
       <Drawer.Navigator
         initialRouteName='StackNavigation'
         screenOptions={{
