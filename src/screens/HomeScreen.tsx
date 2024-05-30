@@ -1,4 +1,4 @@
-import { View, Text, Platform, TouchableOpacity, ScrollView, Image, } from 'react-native'
+import { View, Text, Platform, TouchableOpacity, ScrollView, Image, StyleSheet, } from 'react-native'
 import React, { useState } from 'react'
 import GlobalComponent from '../components/GlobalComponent'
 import { Ionicons } from '@expo/vector-icons';
@@ -9,6 +9,7 @@ import { Entypo } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import YoutubeIframe from 'react-native-youtube-iframe';
+import HomeShortsVideos from '../components/HomeShortsVideos';
 
 const HomeScreen = ({ navigation }: any) => {
 
@@ -70,7 +71,7 @@ const HomeScreen = ({ navigation }: any) => {
           {/* video */}
           <View>
             <View className='relative'>
-              <YoutubeIframe videoId='9JSYB59QmZw' height={250} />
+              <YoutubeIframe videoId='9JSYB59QmZw' height={225} />
             </View>
             <View className='absolute bg-black p-1 bottom-9 right-2'>
               <Fontisto name="checkbox-active" size={24} color="white" />
@@ -111,10 +112,17 @@ const HomeScreen = ({ navigation }: any) => {
         {/* end */}
 
         {/* 1 video */}
-        <View className='mt-10'>
+        <View className='mt-16'>
           {/* video */}
-          <View>
-            <YoutubeIframe videoId='fjeczXPnIHg' height={250} />
+          <View className='relative'>
+            <View>
+              <YoutubeIframe videoId='fjeczXPnIHg' height={230} />
+            </View>
+            {/* time */}
+            <View className='absolute bottom-5 right-2 px-2 py-1 rounded' style={styles.background}>
+              <Text className='text-white font-bold'>4:30</Text>
+            </View>
+
           </View>
           {/* logo and text */}
           <View className='flex-row justify-between mx-3'>
@@ -143,7 +151,15 @@ const HomeScreen = ({ navigation }: any) => {
 
         {/* SHORTS */}
         <View className='mt-16'>
-          
+          {/* text */}
+          <View className='ml-8 flex-row items-center'>
+            <Fontisto name="flash" size={40} color="red" />
+            <Text className='ml-3 text-xl font-bold'>Shorts</Text>
+          </View>
+          {/* shorts videos */}
+          <View className='mx-4'>
+            <HomeShortsVideos />
+          </View>
         </View>
         {/* end */}
 
@@ -155,15 +171,9 @@ const HomeScreen = ({ navigation }: any) => {
 
 export default HomeScreen
 
-
-// fjeczXPnIHg   Music in islam - dr zakir naik
-
-// 0S7-qkhUUZM   monothiesm in judaism - ||
-
-// fKwAU1_bn24   spring xml config
-
-// BGTx91t8q50   java toturial 2023
-
-// eAdNtpdh0So   how to become a tech professional
-
-// KzuW38WcE0E   python coding intro 
+const styles = StyleSheet.create({
+  background: {
+    backgroundColor: '#1f2937',
+    opacity: 0.7,
+  },
+});
