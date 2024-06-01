@@ -52,23 +52,23 @@ export const optionTexts = [
 export const shortsVideos = [
     {
         id: 1,
-        link: require('../assets/videos/watermarked_preview.mp4'),
-        text: 'A King Does Not Kill A King." - Kingdom of Heaven (2005)'
+        link: require('../assets/videos/vid2.mp4'),
+        text: 'Businessman Using Laptop with Green Chroma Key Screen'
     },
     {
         id: 2,
-        link: 'watermarked_preview.mp4',
-        text: 'Funny videos'
+         link: require('../assets/videos/vid3.mp4'),
+        text: 'Blue Sky View with Green grass'
     },
     {
         id: 3,
-        link: 'AUmM9r9JZkM',
-        text: 'Metal master'
+         link: require('../assets/videos/vid.mp4'),
+        text: 'Many bubbles in water close up, abstract water wave with bubbles in slow motion'
     },
     {
         id: 4,
-        link: 'q11RA6BvOoU',
-        text: 'When a person sins if he is a believer - Mufti Menk'
+         link: require('../assets/videos/vid1.mp4'),
+        text: 'Aerial view of Dubai frame landmark during the sunset, Dubai, U.A.E'
     }
 ]
 

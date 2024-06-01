@@ -1,51 +1,68 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React, { useRef } from 'react'
+import { View, Text, StyleSheet, Dimensions, Modal, TouchableOpacity, TouchableWithoutFeedback } from 'react-native'
+import React, { useRef, useState } from 'react'
 import { ResizeMode, Video } from 'expo-av';
 import { shortsVideos } from '../data';
-// import Video from 'react-native-video';
+import { Entypo } from '@expo/vector-icons';
+import ShortModal from './ShortModal';
 
 const HomeShortsVideos = () => {
 
     const videoRef = useRef(null);
-    const background = require('../../assets/videos/watermarked_preview.mp4');
+    const { width: windowWidth } = Dimensions.get('window');
+
+    const [shortModal, setShortModal] = useState(false)
+
+    const handleShortModal = () => {
+        setShortModal(!shortModal)
+    }
 
     return (
-        <View className='mt-3'>
+        <View className="mt-3 flex-row flex-wrap ">
             {shortsVideos.map((short, index) => (
-                <View key={index}>
-                    <Video
-                        ref={videoRef}
-                        source={{uri: short.link}}
-                        style={styles.video}
-                        useNativeControls
-                        resizeMode={ResizeMode.CONTAIN}
-                        isLooping
-                    />
-
+                <View key={index} className="mb-2 w-1/2 px-2">
+                    <View className="relative items-center">
+                        <Video
+                            ref={videoRef}
+                            source={short.link}
+                            style={{ width: windowWidth / 2 - 22, height: 290, borderRadius: 8 }}
+                            useNativeControls
+                            resizeMode={ResizeMode.COVER}
+                            isLooping
+                        />
+                        <View className="absolute right-0 top-2">
+                            <TouchableOpacity onPress={handleShortModal}>
+                                <Entypo name="dots-three-vertical" size={20} color="white" />
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <Text className="absolute bottom-8 left-2 text-white font-bold">
+                        {short.text.slice(0, 19)}...
+                    </Text>
+                    <Text className="absolute bottom-2 left-2 text-white font-bold">
+                        #shorts
+                    </Text>
                 </View>
             ))}
-            <Text>hhh</Text>
-            <Video
-                ref={videoRef}
-                source={background}
-                style={styles.video}
-                useNativeControls
-                resizeMode={ResizeMode.CONTAIN}
-                isLooping
-            />
+
+
+
+
+            <Modal
+                animationType='slide'
+                transparent={true}
+                visible={shortModal}
+            >
+                <TouchableWithoutFeedback onPress={handleShortModal}>
+                    <View style={{ flex: 1, backgroundColor: 'rgba(0,0,0,0.2)' }}>
+                        <View style={{ height: '16%', marginTop: 'auto', backgroundColor: '#FFFFFF' }} className='rounded-t-2xl'>
+                            <ShortModal />
+                        </View>
+                    </View>
+                </TouchableWithoutFeedback>
+            </Modal>
+
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        marginTop: 15,
-    },
-    video: {
-        width: '50%',
-        height: 290,
-        borderRadius: 20
-    },
-});
 
 export default HomeShortsVideos

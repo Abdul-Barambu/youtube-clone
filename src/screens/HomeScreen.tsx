@@ -152,8 +152,8 @@ const HomeScreen = ({ navigation }: any) => {
         {/* SHORTS */}
         <View className='mt-16'>
           {/* text */}
-          <View className='ml-8 flex-row items-center'>
-            <Fontisto name="flash" size={40} color="red" />
+          <View className='ml-7 flex-row items-center'>
+            <Fontisto name="flash" size={33} color="red" />
             <Text className='ml-3 text-xl font-bold'>Shorts</Text>
           </View>
           {/* shorts videos */}
