@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Dimensions, Modal, TouchableOpacity, TouchableWithoutFeedback } from 'react-native'
 import React, { useRef, useState } from 'react'
 import { ResizeMode, Video } from 'expo-av';
-import { shortsVideos } from '../data';
+import { shortsVideos } from '../../data';
 import { Entypo } from '@expo/vector-icons';
 import ShortModal from './ShortModal';
 
@@ -24,7 +24,7 @@ const HomeShortsVideos = () => {
                         <Video
                             ref={videoRef}
                             source={short.link}
-                            style={{ width: windowWidth / 2 - 22, height: 290, borderRadius: 8 }}
+                            style={{ width: windowWidth / 2 - 15, height: 290, borderRadius: 8 }}
                             useNativeControls
                             resizeMode={ResizeMode.COVER}
                             isLooping
@@ -53,8 +53,8 @@ const HomeShortsVideos = () => {
                 visible={shortModal}
             >
                 <TouchableWithoutFeedback onPress={handleShortModal}>
-                    <View style={{ flex: 1, backgroundColor: 'rgba(0,0,0,0.2)' }}>
-                        <View style={{ height: '16%', marginTop: 'auto', backgroundColor: '#FFFFFF' }} className='rounded-t-2xl'>
+                    <View style={{ flex: 1, backgroundColor: 'rgba(0,0,0,0.4)' }}>
+                        <View style={{ height: '23%', marginTop: 'auto', backgroundColor: '#FFFFFF' }} className='rounded-t-2xl'>
                             <ShortModal />
                         </View>
                     </View>

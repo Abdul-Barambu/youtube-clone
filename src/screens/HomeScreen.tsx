@@ -9,7 +9,8 @@ import { Entypo } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import YoutubeIframe from 'react-native-youtube-iframe';
-import HomeShortsVideos from '../components/HomeShortsVideos';
+import HomeShortsVideos from '../components/home/HomeShortsVideos';
+import HomeYoutubeVideos from '../components/home/HomeYoutubeVideos';
 
 const HomeScreen = ({ navigation }: any) => {
 
@@ -133,7 +134,7 @@ const HomeScreen = ({ navigation }: any) => {
                 <Text className='text-base'>Music in islam - Dr Zakir Naik</Text>
               </View>
               <View className='flex-row items-center justify-center'>
-                <Text className='text-neutral-500 text-sm'>Dr Zakir Nai </Text>
+                <Text className='text-neutral-500 text-sm'>Dr Zakir Naik</Text>
                 <Entypo name="dot-single" size={10} color="gray" />
                 <Text className='text-neutral-500 text-sm'> 1.4K views </Text>
                 <Entypo name="dot-single" size={10} color="gray" />
@@ -157,9 +158,14 @@ const HomeScreen = ({ navigation }: any) => {
             <Text className='ml-3 text-xl font-bold'>Shorts</Text>
           </View>
           {/* shorts videos */}
-          <View className='mx-4'>
+          <View className='mx-2'>
             <HomeShortsVideos />
           </View>
+        </View>
+        
+        {/* Youtube videos */}
+        <View>
+          <HomeYoutubeVideos />
         </View>
         {/* end */}
 
