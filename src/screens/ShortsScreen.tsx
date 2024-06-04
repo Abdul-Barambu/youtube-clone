@@ -31,7 +31,7 @@ const ShortsScreen = () => {
           <View className='flex-row items-center gap-2'>
             <Image source={require('../../assets/images/football.jpg')} className='w-9 h-9 rounded-full' />
             <Text className='text-white font-bold text-sm'>@Football</Text>
-            <Pressable onPress={() => setSub('Subscribed')} className={`${sub === 'Subscribed' ? 'bg-neutral-400' : 'bg-white'} px-3 rounded-full`} style={{ paddingVertical: 7.5 }}>
+            <Pressable onPress={() => setSub(sub === 'Subscribe' ? 'Subscribed' : 'Subscribe')} className={`${sub === 'Subscribed' ? 'bg-neutral-400' : 'bg-white'} px-3 rounded-full`} style={{ paddingVertical: 7.5 }}>
               <Text className={`${sub === 'Subscribed' ? 'text-white' : 'text-black'} font-medium`} style={{ fontSize: 11 }}>{sub}</Text>
             </Pressable>
           </View>
