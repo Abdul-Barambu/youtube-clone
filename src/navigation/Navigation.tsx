@@ -41,14 +41,19 @@ export const BottomNavigation = () => {
     <View className='flex-1'>
 
       {/* Tab Navs */}
-      <Tab.Navigator initialRouteName='Welcome' screenOptions={{
-        tabBarActiveTintColor: 'black',
-        tabBarInactiveTintColor: 'black',
-        tabBarLabelStyle: {
-          fontSize: 10,
-          letterSpacing: .5,
-        }
-      }}>
+      <Tab.Navigator initialRouteName='Welcome' screenOptions={({ route }) => ({
+          tabBarActiveTintColor: route.name === 'Shorts' ? 'white' : 'black',
+          tabBarInactiveTintColor: route.name === 'Shorts' ? 'white' : 'black',
+          tabBarStyle: {
+            backgroundColor: route.name === 'Shorts' ? 'black' : 'white',
+          },
+          tabBarLabelStyle: {
+            fontSize: 10,
+            letterSpacing: 0.5,
+          },
+          headerShown: false,
+        })}
+      >
         {/* <Tab.Screen name='Welcome' component={WelcomeScreen} /> */}
 
         {/* Home */}
