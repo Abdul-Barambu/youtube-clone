@@ -11,6 +11,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import YoutubeIframe from 'react-native-youtube-iframe';
 import HomeShortsVideos from '../components/home/HomeShortsVideos';
 import HomeYoutubeVideos from '../components/home/HomeYoutubeVideos';
+import { StatusBar } from 'expo-status-bar';
 
 const HomeScreen = ({ navigation }: any) => {
 
@@ -26,7 +27,7 @@ const HomeScreen = ({ navigation }: any) => {
 
   return (
     <View className='flex-1 bg-white'>
-
+      
       <GlobalComponent />
 
       <ScrollView>
@@ -162,7 +163,7 @@ const HomeScreen = ({ navigation }: any) => {
             <HomeShortsVideos />
           </View>
         </View>
-        
+
         {/* Youtube videos */}
         <View>
           <HomeYoutubeVideos />

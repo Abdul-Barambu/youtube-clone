@@ -46,6 +46,7 @@ export const BottomNavigation = () => {
           tabBarInactiveTintColor: route.name === 'Shorts' ? 'white' : 'black',
           tabBarStyle: {
             backgroundColor: route.name === 'Shorts' ? 'black' : 'white',
+            // backgroundColor: route.name === 'Shorts' ? 'black' : 'white' && route.name === 'AddPost' ? 'transparent' : 'black',
           },
           tabBarLabelStyle: {
             fontSize: 10,

@@ -57,17 +57,17 @@ export const shortsVideos = [
     },
     {
         id: 2,
-         link: require('../assets/videos/vid3.mp4'),
+        link: require('../assets/videos/vid3.mp4'),
         text: 'Blue Sky View with Green grass'
     },
     {
         id: 3,
-         link: require('../assets/videos/vid.mp4'),
+        link: require('../assets/videos/vid.mp4'),
         text: 'Many bubbles in water close up, abstract water wave with bubbles in slow motion'
     },
     {
         id: 4,
-         link: require('../assets/videos/vid1.mp4'),
+        link: require('../assets/videos/vid1.mp4'),
         text: 'Aerial view of Dubai frame landmark during the sunset, Dubai, U.A.E'
     }
 ]
@@ -132,5 +132,103 @@ export const youtubeVideos = [
         name: 'Telusko learnings',
         views: '1.3M views',
         uploaded: '5 years ago'
+    }
+]
+
+export const subs = [
+    {
+        id: 1,
+        image: require('../assets/images/telusko.jpg'),
+        name: 'Telusko Learnings'
+    },
+    {
+        id: 2,
+        image: require('../assets/images/zakir.jpeg'),
+        name: 'Dr Zakir Naik'
+    },
+    {
+        id: 3,
+        image: require('../assets/images/eli.jpg'),
+        name: 'Eli the computer guy'
+    },
+    {
+        id: 4,
+        image: require('../assets/images/telusko.jpg'),
+        name: 'Telusko Learnings'
+    },
+    {
+        id: 5,
+        image: require('../assets/images/zakir.jpeg'),
+        name: 'Dr Zakir Naik'
+    },
+    {
+        id: 6,
+        image: require('../assets/images/eli.jpg'),
+        name: 'Eli the computer guy'
+    },
+    {
+        id: 7,
+        image: require('../assets/images/telusko.jpg'),
+        name: 'Telusko Learnings'
+    },
+    {
+        id: 8,
+        image: require('../assets/images/zakir.jpeg'),
+        name: 'Dr Zakir Naik'
+    },
+    {
+        id: 9,
+        image: require('../assets/images/eli.jpg'),
+        name: 'Eli the computer guy'
+    },
+    {
+        id: 10,
+        image: require('../assets/images/telusko.jpg'),
+        name: 'Telusko Learnings'
+    },
+    {
+        id: 11,
+        image: require('../assets/images/zakir.jpeg'),
+        name: 'Dr Zakir Naik'
+    },
+    {
+        id: 12,
+        image: require('../assets/images/eli.jpg'),
+        name: 'Eli the computer guy'
+    },
+]
+
+export const optionSub = [
+    {
+        id: 1,
+        text: 'All'
+    },
+    {
+        id: 2,
+        text: 'Today'
+    },
+    {
+        id: 3,
+        text: 'Videos'
+    },
+    {
+        id: 4,
+        text: 'Shorts'
+    },
+    {
+        id: 5,
+        text: 'Live'
+    },
+    {
+        id: 6,
+        text: 'Posts'
+    },
+    {
+        id: 7,
+        text: 'Continue watching'
+    },
+    {
+        id: 8,
+        text: 'Unwatched'
     }
 ]

@@ -1,20 +1,28 @@
-import { View, Text, Platform, Image, Pressable, TouchableOpacity } from 'react-native'
-import React, { useRef, useState } from 'react'
+import { View, Text, Image, Pressable, TouchableOpacity, StatusBar } from 'react-native'
+import React, { useCallback, useRef, useState } from 'react'
 import { ResizeMode, Video } from 'expo-av'
-import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { useFocusEffect } from '@react-navigation/native';
 
 const ShortsScreen = () => {
 
   const videoRef = useRef(null);
   const [sub, setSub] = useState('Subscribe')
 
+  useFocusEffect(
+    useCallback(() => {
+      StatusBar.setBarStyle('light-content');
+      return () => {
+        StatusBar.setBarStyle('default')
+      }
+    }, [])
+  )
+
   return (
     <View className='flex-1'>
-      <StatusBar style='light' />
       <View className='flex-1'>
         <Video
           ref={videoRef}

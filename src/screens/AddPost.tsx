@@ -1,11 +1,11 @@
-import { View, Text, Button, StyleSheet, TouchableOpacity, Modal, TouchableWithoutFeedback } from 'react-native'
-import React, { useState } from 'react'
+import { View, Text, Button, StyleSheet, TouchableOpacity, Modal, TouchableWithoutFeedback, StatusBar } from 'react-native'
+import React, { useCallback, useState } from 'react'
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { CameraType } from 'expo-camera/build/legacy/Camera.types';
 import CameraPermission from '../components/CameraPermission';
 import { FontAwesome, FontAwesome6 } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import { StatusBar } from 'expo-status-bar';
+import { useFocusEffect } from '@react-navigation/native';
 
 const AddPost = () => {
 
@@ -16,6 +16,19 @@ const AddPost = () => {
   const handleCam = () => {
     setCam(!cam)
   }
+
+
+  useFocusEffect(
+    useCallback(() => {
+      // Set the status bar style when this screen is focused
+      StatusBar.setBarStyle('light-content');
+
+      // Clean up function to reset the status bar style when the screen is unfocused
+      return () => {
+        StatusBar.setBarStyle('default');
+      };
+    }, [])
+  );
 
   if (!permission) {
     // Camera permissions are still loading.
@@ -50,7 +63,6 @@ const AddPost = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar style='light' />
       <CameraView style={styles.camera} facing={facing}>
         <View style={styles.buttonContainer} className='absolute bottom-0 mb-10 mx-5'>
           <View className='flex-1 flex-row items-center justify-between'>
