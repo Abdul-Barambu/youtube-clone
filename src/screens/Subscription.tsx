@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import GlobalComponent from '../components/GlobalComponent'
 import { optionSub, subs } from '../data'
 import HomeYoutubeVideos from '../components/home/HomeYoutubeVideos'
+import { StatusBar } from 'expo-status-bar'
 
 const Subscription = () => {
 
@@ -10,7 +11,7 @@ const Subscription = () => {
 
   return (
     <View className='flex-1 bg-white'>
-
+      <StatusBar style='dark' />
       <GlobalComponent />
 
       <ScrollView>
