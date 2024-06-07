@@ -9,17 +9,17 @@ const CameraPermission = ({ requestPermission, handleCam }: any) => {
                 <Text></Text>
             </View>
 
-            <View>
+            <View className='mx-2'>
                 <View className='flex-row items-center mx-4 mt-4 gap-3'>
                     <AntDesign name="youtube" size={40} color="red" />
-                    <Text>Allow YouTube-clone to access your camera</Text>
+                    <Text className='font-medium text-base'>Allow YouTube-clone to access your camera</Text>
                 </View>
                 <View className='flex-row items-center mx-4 mt-4 gap-3 justify-end'>
-                    <TouchableOpacity className='bg-black p-2 rounded' onPress={handleCam}>
-                        <Text>Deny</Text>
+                    <TouchableOpacity className='bg-black py-1 px-3 rounded' onPress={handleCam}>
+                        <Text className='text-white font-bold'>Deny</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity className='bg-black p-2 rounded' onPress={requestPermission}>
-                        <Text>Allow</Text>
+                    <TouchableOpacity className='bg-black py-1 px-3 rounded' onPress={requestPermission}>
+                        <Text className='text-white font-bold'>Allow</Text>
                     </TouchableOpacity>
                 </View>
             </View>
