@@ -53,7 +53,7 @@ export const shortsVideos = [
     {
         id: 1,
         link: require('../assets/videos/vid2.mp4'),
-        text: 'Businessman Using Laptop with Green Chroma Key Screen'
+        text: 'Businessman Using Laptop with Green Chroma Key Screen',
     },
     {
         id: 2,
@@ -231,4 +231,49 @@ export const optionSub = [
         id: 8,
         text: 'Unwatched'
     }
+]
+
+export const accountVideos = [
+    {
+        id: 1,
+        image: require('../assets/images/eliVideo.jpg'),
+        name: 'Eli the computer guy',
+        text: 'Spring xml config',
+        time: '2:30'
+    },
+    {
+        id: 2,
+        image: require('../assets/images/teluskiVideo.jpeg'),
+        name: 'Telusko learnings',
+        text: 'Python coding introduction',
+        time: '3:30'
+    },
+    {
+        id: 3,
+        image: require('../assets/images/zakirVideo.jpg'),
+        name: 'Dr Zakir Naik',
+        text: 'Music in islam - Dr Zakir Naik',
+        time: '5:47'
+    },
+    {
+        id: 4,
+        image: require('../assets/images/eliVideo.jpg'),
+        name: 'Eli the computer guy',
+        text: 'Spring xml config',
+        time: '1:20'
+    },
+    {
+        id: 5,
+        image: require('../assets/images/teluskiVideo.jpeg'),
+        name: 'Telusko learnings',
+        text: 'Python coding introduction',
+        time: '4:00'
+    },
+    {
+        id: 6,
+        image: require('../assets/images/zakirVideo.jpg'),
+        name: 'Dr Zakir Naik',
+        text: 'Music in islam - Dr Zakir Naik',
+        time: '9:30'
+    },
 ]
